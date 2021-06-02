@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "d06613d4-14b1-4751-8bf3-e32145df5e08",
+		"name": "Tech Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "pdd_records all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/api/ppd_records",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ppd_records"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pdd_records id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/api/ppd_records/{C18F412A-7347-81A6-E053-6B04A8C0AD18}/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ppd_records",
+						"{C18F412A-7347-81A6-E053-6B04A8C0AD18}",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pdd_records date range",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/api/ppd_records/?date_of_transfer__gt=2020-03-12 00:00&date_of_transfer__lt=2021-12-12 00:00",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ppd_records",
+						""
+					],
+					"query": [
+						{
+							"key": "date_of_transfer__gt",
+							"value": "2020-03-12 00:00"
+						},
+						{
+							"key": "date_of_transfer__lt",
+							"value": "2021-12-12 00:00"
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pdd_records date range - bad range",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/api/ppd_records/?date_of_transfer__gt=2020-03-12 00:00&date_of_transfer__lt=2020-02-12 00:00",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ppd_records",
+						""
+					],
+					"query": [
+						{
+							"key": "date_of_transfer__gt",
+							"value": "2020-03-12 00:00"
+						},
+						{
+							"key": "date_of_transfer__lt",
+							"value": "2020-02-12 00:00"
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pdd_records import",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/api/ppd_records/import_csv?filename=pp-2020.csv",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ppd_records",
+						"import_csv"
+					],
+					"query": [
+						{
+							"key": "filename",
+							"value": "pp-2020.csv"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pdd_records delete all",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/api/ppd_records/delete_all/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ppd_records",
+						"delete_all",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
